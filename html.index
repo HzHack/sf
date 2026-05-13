@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>دعوة زواج صابر وفاطمة</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💛</text></svg>">
+    <meta name="theme-color" content="#b68b3c">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- تحميل مسبق لصورة الخلفية لضمان سرعة الظهور -->
+    <link rel="preload" as="image" href="https://h.top4top.io/p_37859izl40.jpg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            color: #2c2c2c; 
+            overflow-x: hidden;
+            /* استخدام الرابط المباشر الجديد للخلفية */
+            background: url('https://h.top4top.io/p_37859izl40.jpg') center/cover no-repeat fixed; 
+        }
+
+        /* طبقة حماية شفافة جداً لضمان وضوح النص على الخلفية */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.3);
+            z-index: -1;
+        }
+
+        .container {
+            width: min(92%, 700px);
+            margin: auto;
+        }
+
+        /* الغلاف */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(5px);
+            padding: 40px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            animation: heroFade 1.6s ease;
+        }
+
+        @keyframes heroFade {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .invite-top {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: #b8860b;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        .names {
+            font-family: 'Amiri', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #4a4a4a;
+            line-height: 2;
+            max-width: 560px;
+            margin: auto auto 20px;
+        }
+
+        .poetry {
+            font-family: 'Amiri', serif;
+            margin-top: 30px;
+            line-height: 2.4;
+            color: #2c2c2c;
+            font-size: 1.6rem;
+            font-style: italic;
+        }
+
+        /* الأزرار */
+        .open-btn,
+        .rsvp-btn {
+            display: inline-block;
+            padding: 16px 55px;
+            border: none;
+            border-radius: 60px;
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .35s ease;
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);
+        }
+
+        .open-btn:hover,
+        .rsvp-btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(184, 134, 11, 0.4);
+        }
+
+        /* الأقسام - تم إزالة الإخفاء وجعلها زجاجية فاتحة */
+        section {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            padding: 55px 35px;
+            margin: 45px 0;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            font-family: 'Amiri', serif;
+            font-size: 2.8rem;
+            color: #b8860b;
+            margin-bottom: 35px;
+            position: relative;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 70px;
+            height: 2px;
+            background: #b8860b;
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* العد التنازلي */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            width: 110px;
+            height: 110px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .time-box span {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #b8860b;
+        }
+
+        .time-box small {
+            margin-top: 5px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* النصوص الداخلية */
+        .message {
+            max-width: 520px;
+            margin: auto;
+            font-size: 1.35rem;
+            line-height: 2.4;
+            color: #333;
+            text-align: center;
+        }
+
+        .details {
+            text-align: center;
+        }
+
+        .details p {
+            margin: 18px 0;
+            font-size: 1.2rem;
+            color: #2c2c2c;
+            font-weight: 600;
+        }
+
+        .details a {
+            color: #b8860b;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .details a:hover {
+            color: #8a6306;
+        }
+
+        /* الفورم */
+        .rsvp-form input,
+        .rsvp-form select {
+            width: 100%;
+            padding: 16px;
+            margin: 12px 0;
+            border-radius: 16px;
+            border: 1px solid #ddd;
+            background: #fff;
+            color: #2c2c2c;
+            font-size: 1rem;
+            outline: none;
+            transition: .3s ease;
+        }
+
+        .rsvp-form input:focus,
+        .rsvp-form select:focus {
+            border-color: #b8860b;
+            box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.1);
+        }
+
+        #rsvp-thanks {
+            display: none;
+            margin-top: 20px;
+            padding: 30px;
+            border-radius: 22px;
+            background: rgba(184, 134, 11, 0.1);
+            border: 1px solid rgba(184, 134, 11, 0.3);
+            text-align: center;
+            color: #2c2c2c;
+        }
+
+        /* الفوتر */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            margin-top: 40px;
+        }
+
+        .footer-text {
+            font-family: 'Amiri', serif;
+            font-size: 2.2rem;
+            color: #b8860b;
+            margin-bottom: 25px;
+        }
+
+        .inviter {
+            margin-top: 35px;
+            font-size: 1.1rem;
+            color: #4a4a4a;
+            font-weight: 600;
+        }
+
+        /* الجوال */
+        @media(max-width:600px) {
+            .names { font-size: 3.5rem; line-height: 1.2; }
+            .invite-top { font-size: 1.4rem; }
+            .subtitle { font-size: 1.05rem; }
+            .poetry { font-size: 1.4rem; line-height: 2.2; }
+            section { padding: 42px 22px; }
+            .message { font-size: 1.15rem; }
+            .section-title { font-size: 2.2rem; }
+            .time-box { width: 85px; height: 85px; }
+            .time-box span { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== الغلاف ==================== -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="invite-top">✦ يشرفنا دعوتكم ✦</div>
+            <h1 class="names">صابر & فاطمة</h1>
+            <p class="subtitle">
+                لأن حضوركم يزيد فرحتنا جمالاً،
+                يسعدنا أن تشاركونا ليلة العمر
+            </p>
+            <div class="poetry">
+                تزدانُ أرجاءُ الوجودِ بلقياكم<br>
+                ويطيبُ في ليلِ السرورِ محيّاكم
+                <br><br>
+                أهلاً بكم في ليلةٍ قد أشرقت<br>
+                بالسعدِ والأفراحِ حينَ نراكم
+            </div>
+            <a href="#main-content" class="open-btn" style="margin-top:45px;">فتح الدعوة</a>
+        </div>
+    </div>
+
+    <!-- ==================== المحتوى ==================== -->
+    <div class="container" id="main-content">
+
+        <!-- العد التنازلي -->
+        <section>
+            <h2 class="section-title">العد التنازلي</h2>
+            <div class="countdown" id="countdown">
+                <div class="time-box"><span id="days">00</span><small>يوم</small></div>
+                <div class="time-box"><span id="hours">00</span><small>ساعة</small></div>
+                <div class="time-box"><span id="minutes">00</span><small>دقيقة</small></div>
+                <div class="time-box"><span id="seconds">00</span><small>ثانية</small></div>
+            </div>
+        </section>
+
+        <!-- الرسالة -->
+        <section>
+            <p class="message">
+                بكل حب وفرح،
+                نتشرف بدعوتكم لمشاركتنا أجمل لحظات العمر،
+                فوجودكم بيننا يزيد المناسبة بهجةً وسعادة.
+            </p>
+            <p style="font-family: 'Amiri', serif; margin-top:35px; color:#b8860b; font-size:1.8rem; text-align: center;">صابر & فاطمة</p>
+        </section>
+
+        <!-- التفاصيل -->
+        <section>
+            <h2 class="section-title">تفاصيل الحفل</h2>
+            <div class="details">
+                <p>📅 الجمعة 15 يوليو 2026</p>
+                <p>⏰ الساعة 8:00 مساءً</p>
+                <p>
+                    📍
+                    <a href="https://maps.google.com/?q=قاعة+الزهور+الرياض" target="_blank">
+                        قاعة الزهور - الرياض
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- تأكيد الحضور -->
+        <section>
+            <h2 class="section-title">تأكيد الحضور</h2>
+            <form id="rsvpForm" class="rsvp-form">
+                <input type="text" name="الاسم" placeholder="الاسم الكريم" required>
+                <select name="عدد الأشخاص" required>
+                    <option value="">عدد الأشخاص</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <button type="submit" class="rsvp-btn" id="submitBtn" style="width: 100%; margin-top: 15px;">تأكيد الحضور</button>
+            </form>
+            <div id="rsvp-thanks">
+                <p style="font-size:1.3rem;line-height:2; margin: 0;">
+                    شكراً لتأكيد حضوركم ❤️<br>
+                    بانتظاركم بكل حب
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ==================== الفوتر ==================== -->
+    <footer>
+        <p class="footer-text">بوجودكم تكتمل فرحتنا</p>
+
+        <button type="button" id="shareButton" class="open-btn" style="margin-top:20px;">
+            مشاركة الدعوة 📤
+        </button>
+
+        <p class="inviter">الداعي : عائلة البهكلي</p>
+    </footer>
+
+    <!-- ==================== السكريبتات ==================== -->
+    <script>
+        // ========== العد التنازلي ==========
+        const weddingDate = new Date("2026-07-15T20:00:00").getTime();
+
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML =
+                    "<h2 style='font-family: \"Amiri\", serif; font-size: 2.2rem; color:#b8860b;'>اليوم هو يوم زفافنا 🎉</h2>";
+                return;
+            }
+
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+
+        // ========== زر المشاركة ==========
+        document.getElementById('shareButton').addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'دعوة زواج صابر وفاطمة',
+                        text: 'نتشرف بحضوركم ومشاركتنا فرحتنا ❤️',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('تم إلغاء المشاركة');
+                }
+            } else {
+                try {
+                    await navigator.clipboard.writeText(window.location.href);
+                    alert('تم نسخ رابط الدعوة! 📋');
+                } catch {
+                    alert('رابط الدعوة: ' + window.location.href);
+                }
+            }
+        });
+
+        // ========== الفورم (Formspree) ==========
+        const FORMSPREE_URL = "https://formspree.io/f/xrejvpel";
+
+        document.getElementById('rsvpForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const btn = document.getElementById('submitBtn');
+            const data = new FormData(form);
+
+            btn.innerText = 'جاري الإرسال...';
+            btn.disabled = true;
+
+            fetch(FORMSPREE_URL, {
+                    method: "POST",
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        form.style.display = "none";
+                        document.getElementById('rsvp-thanks').style.display = 'block';
+                    } else {
+                        throw new Error('استجابة غير ناجحة');
+                    }
+                })
+                .catch(() => {
+                    alert("⚠️ حدث خطأ أثناء الإرسال. تأكد من اتصال الإنترنت.");
+                    btn.innerText = 'تأكيد الحضور';
+                    btn.disabled = false;
+                });
+        });
+    </script>
+
+</body>
+</html>
