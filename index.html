@@ -2,1019 +2,662 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-</title>دعوة عقد قراني </title>
-
-<meta name="theme-color" content="#050505">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-:root{
---gold:#d6c19a;
---soft:#f4f1ea;
---bg:#050505;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#050505;
-color:white;
-overflow-x:hidden;
-font-family:'Noto Naskh Arabic', serif;
-}
-
-/* ========================= /
-/ VIDEO BACKGROUND /
-/ ========================= */
-
-.video-bg{
-position:fixed;
-inset:0;
-overflow:hidden;
-z-index:-5;
-}
-
-.video-bg video{
-width:100%;
-height:100%;
-object-fit:cover;
-
-filter:
-brightness(.22)
-contrast(1.1)
-saturate(.9);
-
-transform:scale(1.05);
-}
-
-.overlay{
-position:fixed;
-inset:0;
-
-background:
-radial-gradient(circle at top,
-rgba(214,193,154,.08),
-transparent 40%),
-
-linear-gradient(
-rgba(0,0,0,.50),
-rgba(0,0,0,.78)
-);
-
-z-index:-4;
-}
-
-.grain{
-position:fixed;
-inset:0;
-pointer-events:none;
-opacity:.05;
-z-index:-3;
-
-background-image:
-url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-}
-
-/* ========================= /
-/ LOADER /
-/ ========================= */
-
-.loader{
-position:fixed;
-inset:0;
-background:black;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-z-index:9999;
-
-transition:1.5s ease;
-}
-
-.loader.hide{
-opacity:0;
-visibility:hidden;
-}
-
-.loader-content{
-text-align:center;
-}
-
-.loader-small{
-color:var(--gold);
-letter-spacing:7px;
-font-size:.7rem;
-margin-bottom:22px;
-font-family:'Cormorant Garamond', serif;
-}
-
-.loader-title{
-font-family:'Cormorant Garamond', serif;
-font-size:5rem;
-font-weight:400;
-}
-
-.loader-line{
-width:120px;
-height:1px;
-background:rgba(255,255,255,.12);
-
-margin:35px auto 0;
-
-overflow:hidden;
-position:relative;
-}
-
-.loader-line::after{
-content:"";
-position:absolute;
-left:-100%;
-top:0;
-
-width:100%;
-height:100%;
-
-background:var(--gold);
-
-animation:loading 2s ease infinite;
-}
-
-@keyframes loading{
-
-to{
-left:100%;
-}
-
-}
-
-/* ========================= /
-/ HERO /
-/ ========================= */
-
-.hero{
-min-height:100vh;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-text-align:center;
-
-padding:40px 25px;
-}
-
-.hero-content{
-width:min(92%,1000px);
-}
-
-.eyebrow{
-
-color:var(--gold);
-
-letter-spacing:7px;
-
-text-transform:uppercase;
-
-font-size:.75rem;
-
-margin-bottom:35px;
-
-font-family:'Cormorant Garamond', serif;
-
-opacity:0;
-transform:translateY(20px);
-
-animation:fadeUp 1s ease forwards;
-animation-delay:2.2s;
-}
-
-.hero-title{
-
-font-family:'Cormorant Garamond', serif;
-
-font-size:clamp(4rem,11vw,9rem);
-
-line-height:.9;
-
-font-weight:500;
-
-opacity:0;
-transform:translateY(35px);
-
-animation:fadeUp 1.2s ease forwards;
-animation-delay:2.5s;
-}
-
-.hero-title span{
-
-display:block;
-
-color:var(--gold);
-
-font-size:.22em;
-
-letter-spacing:10px;
-
-margin:20px 0;
-}
-
-.arabic{
-
-margin-top:28px;
-
-font-size:1.4rem;
-
-color:rgba(255,255,255,.72);
-
-letter-spacing:2px;
-
-opacity:0;
-transform:translateY(25px);
-
-animation:fadeUp 1s ease forwards;
-animation-delay:2.9s;
-}
-
-.hero-text{
-
-max-width:700px;
-
-margin:55px auto 0;
-
-line-height:2.4;
-
-font-size:1.22rem;
-
-color:rgba(255,255,255,.78);
-
-opacity:0;
-transform:translateY(30px);
-
-animation:fadeUp 1.2s ease forwards;
-animation-delay:3.2s;
-}
-
-.hero-button{
-
-margin-top:70px;
-
-display:inline-flex;
-
-align-items:center;
-justify-content:center;
-
-width:78px;
-height:78px;
-
-border-radius:100px;
-
-border:1px solid rgba(255,255,255,.12);
-
-color:var(--gold);
-
-text-decoration:none;
-
-backdrop-filter:blur(10px);
-
-transition:.4s ease;
-
-opacity:0;
-
-animation:fadeIn 1.5s ease forwards;
-animation-delay:3.8s;
-}
-
-.hero-button:hover{
-transform:translateY(10px);
-background:rgba(255,255,255,.03);
-}
-
-@keyframes fadeUp{
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-@keyframes fadeIn{
-
-to{
-opacity:1;
-}
-
-}
-
-/* ========================= /
-/ CONTENT /
-/ ========================= */
-
-.container{
-width:min(92%,1150px);
-margin:auto;
-}
-
-section{
-padding:160px 20px;
-}
-
-.section-line{
-width:1px;
-height:90px;
-background:rgba(255,255,255,.08);
-margin-bottom:40px;
-}
-
-.section-mini{
-
-color:var(--gold);
-
-letter-spacing:5px;
-
-text-transform:uppercase;
-
-font-size:.75rem;
-
-margin-bottom:20px;
-
-font-family:'Cormorant Garamond', serif;
-}
-
-.section-title{
-
-font-family:'Cormorant Garamond', serif;
-
-font-size:clamp(2.5rem,6vw,5rem);
-
-line-height:1.1;
-
-font-weight:500;
-
-margin-bottom:35px;
-}
-
-.section-text{
-
-max-width:700px;
-
-font-size:1.15rem;
-
-line-height:2.4;
-
-color:rgba(255,255,255,.72);
-}
-
-/* ========================= /
-/ CARDS /
-/ ========================= */
-
-.cards{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(320px,1fr));
-
-gap:28px;
-
-margin-top:70px;
-}
-
-.card{
-
-padding:50px;
-
-background:rgba(255,255,255,.03);
-
-border:1px solid rgba(255,255,255,.06);
-
-backdrop-filter:blur(14px);
-
-transition:.5s ease;
-
-position:relative;
-
-overflow:hidden;
-}
-
-.card::before{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-linear-gradient(
-135deg,
-rgba(214,193,154,.08),
-transparent 45%
-);
-
-opacity:0;
-
-transition:.5s ease;
-}
-
-.card:hover{
-transform:translateY(-12px);
-border-color:rgba(214,193,154,.25);
-}
-
-.card:hover::before{
-opacity:1;
-}
-
-.card-label{
-
-color:var(--gold);
-
-letter-spacing:3px;
-
-font-size:.75rem;
-
-margin-bottom:22px;
-
-font-family:'Cormorant Garamond', serif;
-}
-
-.card-value{
-
-font-size:1.7rem;
-
-line-height:1.7;
-}
-
-/* ========================= /
-/ QUOTE /
-/ ========================= */
-
-.quote{
-
-text-align:center;
-
-max-width:900px;
-
-margin:auto;
-}
-
-.quote-text{
-
-font-family:'Cormorant Garamond', serif;
-
-font-size:clamp(2rem,5vw,4rem);
-
-line-height:1.6;
-
-font-weight:300;
-}
-
-.quote-sub{
-
-margin-top:35px;
-
-color:var(--gold);
-
-letter-spacing:5px;
-
-font-size:.8rem;
-}
-
-/* ========================= /
-/ BUTTON /
-/ ========================= */
-
-.share-btn{
-
-margin-top:65px;
-
-padding:20px 55px;
-
-border:1px solid rgba(214,193,154,.25);
-
-background:rgba(255,255,255,.03);
-
-color:white;
-
-letter-spacing:2px;
-
-cursor:pointer;
-
-transition:.4s ease;
-
-backdrop-filter:blur(10px);
-}
-
-.share-btn:hover{
-
-transform:translateY(-6px);
-
-background:rgba(214,193,154,.08);
-}
-
-/* ========================= /
-/ FOOTER /
-/ ========================= */
-
-footer{
-
-padding:140px 20px 90px;
-
-text-align:center;
-}
-
-.footer-logo{
-
-width:90px;
-height:90px;
-
-margin:
-0 auto 35px;
-
-border-radius:50%;
-
-border:1px solid rgba(214,193,154,.35);
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-color:var(--gold);
-
-font-size:1.8rem;
-
-position:relative;
-
-backdrop-filter:blur(10px);
-
-background:rgba(255,255,255,.02);
-}
-
-.footer-logo::before{
-
-content:"";
-
-position:absolute;
-
-inset:-10px;
-
-border-radius:50%;
-
-border:1px solid rgba(214,193,154,.08);
-}
-
-.footer-logo::after{
-
-content:"";
-
-position:absolute;
-
-top:-7px;
-
-width:10px;
-height:10px;
-
-border-radius:50%;
-
-background:var(--gold);
-
-box-shadow:
-0 0 15px rgba(214,193,154,.7);
-}
-
-.footer-text{
-
-color:rgba(255,255,255,.78);
-
-font-size:1.3rem;
-
-line-height:2.2;
-}
-
-.footer-sub{
-
-margin-top:20px;
-
-color:var(--gold);
-
-letter-spacing:6px;
-
-font-size:.75rem;
-
-font-family:'Cormorant Garamond', serif;
-}
-
-/* ========================= /
-/ REVEAL /
-/ ========================= */
-
-.reveal{
-
-opacity:0;
-
-transform:translateY(60px);
-
-transition:1.3s ease;
-}
-
-.reveal.active{
-
-opacity:1;
-
-transform:translateY(0);
-}
-
-/* ========================= /
-/ MOBILE /
-/ ========================= */
-
-@media(max-width:768px){
-
-.loader-title{
-font-size:3rem;
-}
-
-.hero{
-min-height:100svh;
-
-padding:
-120px 22px
-70px;
-}
-
-.eyebrow{
-font-size:.65rem;
-letter-spacing:4px;
-}
-
-.hero-title{
-font-size:4.2rem;
-line-height:.95;
-}
-
-.hero-title span{
-margin:15px 0;
-letter-spacing:6px;
-}
-
-.arabic{
-font-size:1rem;
-margin-top:18px;
-}
-
-.hero-text{
-margin-top:38px;
-font-size:1rem;
-line-height:2.2;
-}
-
-.hero-button{
-width:62px;
-height:62px;
-margin-top:50px;
-}
-
-section{
-padding:
-100px 22px;
-}
-
-.section-line{
-height:60px;
-margin-bottom:30px;
-}
-
-.section-mini{
-font-size:.65rem;
-letter-spacing:3px;
-}
-
-.section-title{
-font-size:2.5rem;
-line-height:1.2;
-margin-bottom:24px;
-}
-
-.section-text{
-font-size:1rem;
-line-height:2.2;
-}
-
-.cards{
-grid-template-columns:1fr;
-gap:18px;
-margin-top:45px;
-}
-
-.card{
-padding:32px;
-}
-
-.card-value{
-font-size:1.3rem;
-}
-
-.quote-text{
-font-size:2rem;
-line-height:1.8;
-}
-
-.quote-sub{
-font-size:.7rem;
-letter-spacing:3px;
-}
-
-.share-btn{
-width:100%;
-padding:18px 20px;
-margin-top:45px;
-font-size:.85rem;
-}
-
-.footer-logo{
-width:75px;
-height:75px;
-}
-
-.footer-text{
-font-size:1rem;
-}
-
-}
-
-</style>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دعوة عقد قراني</title>
+    <meta name="theme-color" content="#050505">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #d6c19a;
+            --soft: #f4f1ea;
+            --bg: #050505;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050505;
+            color: white;
+            overflow-x: hidden;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+
+        /* ========================= /
+        / VIDEO BACKGROUND /
+        / ========================= */
+        .video-bg {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            z-index: -5;
+        }
+
+        .video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(.22) contrast(1.1) saturate(.9);
+            transform: scale(1.05);
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at top, rgba(214, 193, 154, .08), transparent 40%), linear-gradient(rgba(0, 0, 0, .50), rgba(0, 0, 0, .78));
+            z-index: -4;
+        }
+
+        .grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: .05;
+            z-index: -3;
+            background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+        }
+
+        /* ========================= /
+        / LOADER /
+        / ========================= */
+        .loader {
+            position: fixed;
+            inset: 0;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: 1.5s ease;
+        }
+
+        .loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-small {
+            color: var(--gold);
+            letter-spacing: 7px;
+            font-size: .7rem;
+            margin-bottom: 22px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .loader-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 400;
+        }
+
+        .loader-line {
+            width: 120px;
+            height: 1px;
+            background: rgba(255, 255, 255, .12);
+            margin: 35px auto 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loader-line::after {
+            content: "";
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            animation: loading 2s ease infinite;
+        }
+
+        @keyframes loading {
+            to {
+                left: 100%;
+            }
+        }
+
+        /* ========================= /
+        / HERO /
+        / ========================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 25px;
+        }
+
+        .hero-content {
+            width: min(92%, 1000px);
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            font-size: .75rem;
+            margin-bottom: 35px;
+            font-family: 'Cormorant Garamond', serif;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1s ease forwards;
+            animation-delay: 2.2s;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(4rem, 11vw, 9rem);
+            line-height: .9;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(35px);
+            animation: fadeUp 1.2s ease forwards;
+            animation-delay: 2.5s;
+        }
+
+        .hero-title span {
+            display: block;
+            color: var(--gold);
+            font-size: .22em;
+            letter-spacing: 10px;
+            margin: 20px 0;
+        }
+
+        .arabic {
+            margin-top: 28px;
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, .72);
+            letter-spacing: 2px;
+            opacity: 0;
+            transform: translateY(25px);
+            animation: fadeUp 1s ease forwards;
+            animation-delay: 2.9s;
+        }
+
+        .hero-text {
+            max-width: 700px;
+            margin: 55px auto 0;
+            line-height: 2.4;
+            font-size: 1.22rem;
+            color: rgba(255, 255, 255, .78);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1.2s ease forwards;
+            animation-delay: 3.2s;
+        }
+
+        .hero-button {
+            margin-top: 70px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 78px;
+            height: 78px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            color: var(--gold);
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            transition: .4s ease;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            animation-delay: 3.8s;
+        }
+
+        .hero-button:hover {
+            transform: translateY(10px);
+            background: rgba(255, 255, 255, .03);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ========================= /
+        / CONTENT /
+        / ========================= */
+        .container {
+            width: min(92%, 1150px);
+            margin: auto;
+        }
+
+        section {
+            padding: 160px 20px;
+        }
+
+        .section-line {
+            width: 1px;
+            height: 90px;
+            background: rgba(255, 255, 255, .08);
+            margin-bottom: 40px;
+        }
+
+        .section-mini {
+            color: var(--gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: .75rem;
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.1;
+            font-weight: 500;
+            margin-bottom: 35px;
+        }
+
+        .section-text {
+            max-width: 700px;
+            font-size: 1.15rem;
+            line-height: 2.4;
+            color: rgba(255, 255, 255, .72);
+        }
+
+        /* ========================= /
+        / CARDS /
+        / ========================= */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            margin-top: 70px;
+        }
+
+        .card {
+            padding: 50px;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .06);
+            backdrop-filter: blur(14px);
+            transition: .5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(214, 193, 154, .08), transparent 45%);
+            opacity: 0;
+            transition: .5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(214, 193, 154, .25);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-label {
+            color: var(--gold);
+            letter-spacing: 3px;
+            font-size: .75rem;
+            margin-bottom: 22px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .card-value {
+            font-size: 1.7rem;
+            line-height: 1.7;
+        }
+
+        /* ========================= /
+        / QUOTE /
+        / ========================= */
+        .quote {
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .quote-sub {
+            margin-top: 35px;
+            color: var(--gold);
+            letter-spacing: 5px;
+            font-size: .8rem;
+        }
+
+        /* ========================= /
+        / BUTTON /
+        / ========================= */
+        .share-btn {
+            margin-top: 65px;
+            padding: 20px 55px;
+            border: 1px solid rgba(214, 193, 154, .25);
+            background: rgba(255, 255, 255, .03);
+            color: white;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: .4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-6px);
+            background: rgba(214, 193, 154, .08);
+        }
+
+        /* ========================= /
+        / FOOTER /
+        / ========================= */
+        footer {
+            padding: 140px 20px 90px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 35px;
+            border-radius: 50%;
+            border: 1px solid rgba(214, 193, 154, .35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.8rem;
+            position: relative;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, .02);
+        }
+
+        .footer-logo::before {
+            content: "";
+            position: absolute;
+            inset: -10px;
+            border-radius: 50%;
+            border: 1px solid rgba(214, 193, 154, .08);
+        }
+
+        .footer-logo::after {
+            content: "";
+            position: absolute;
+            top: -7px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 15px rgba(214, 193, 154, .7);
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, .78);
+            font-size: 1.3rem;
+            line-height: 2.2;
+        }
+
+        .footer-sub {
+            margin-top: 20px;
+            color: var(--gold);
+            letter-spacing: 6px;
+            font-size: .75rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* ========================= /
+        / REVEAL /
+        / ========================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: 1.3s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========================= /
+        / MOBILE /
+        / ========================= */
+        @media(max-width:768px) {
+            .loader-title {
+                font-size: 3rem;
+            }
+            .hero {
+                min-height: 100svh;
+                padding: 120px 22px 70px;
+            }
+            .eyebrow {
+                font-size: .65rem;
+                letter-spacing: 4px;
+            }
+            .hero-title {
+                font-size: 4.2rem;
+                line-height: .95;
+            }
+            .hero-title span {
+                margin: 15px 0;
+                letter-spacing: 6px;
+            }
+            .arabic {
+                font-size: 1rem;
+                margin-top: 18px;
+            }
+            .hero-text {
+                margin-top: 38px;
+                font-size: 1rem;
+                line-height: 2.2;
+            }
+            .hero-button {
+                width: 62px;
+                height: 62px;
+                margin-top: 50px;
+            }
+            section {
+                padding: 100px 22px;
+            }
+            .section-line {
+                height: 60px;
+                margin-bottom: 30px;
+            }
+            .section-mini {
+                font-size: .65rem;
+                letter-spacing: 3px;
+            }
+            .section-title {
+                font-size: 2.5rem;
+                line-height: 1.2;
+                margin-bottom: 24px;
+            }
+            .section-text {
+                font-size: 1rem;
+                line-height: 2.2;
+            }
+            .cards {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                margin-top: 45px;
+            }
+            .card {
+                padding: 32px;
+            }
+            .card-value {
+                font-size: 1.3rem;
+            }
+            .quote-text {
+                font-size: 2rem;
+                line-height: 1.8;
+            }
+            .quote-sub {
+                font-size: .7rem;
+                letter-spacing: 3px;
+            }
+            .share-btn {
+                width: 100%;
+                padding: 18px 20px;
+                margin-top: 45px;
+                font-size: .85rem;
+            }
+            .footer-logo {
+                width: 75px;
+                height: 75px;
+            }
+            .footer-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- VIDEO -->
-
-<div class="video-bg">
-
-<video autoplay muted loop playsinline>
-
-<source src="https://cdn.coverr.co/videos/coverr-luxury-wedding-details-5174?download=1080p" type="video/mp4">
-
-</video>
-
-</div>
-
-<div class="overlay"></div>
-
-<div class="grain"></div>
-
-<!-- LOADER -->
-
-<div class="loader" id="loader">
-
-<div class="loader-content">
-
-<div class="loader-small">
-THE ROYAL ENGAGEMENT
-</div>
-
-<div class="loader-title">
-S & F
-</div>
-
-<div class="loader-line"></div>
-
-</div>
-
-</div>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-content">
-
-<div class="eyebrow">
-THE ROYAL ENGAGEMENT
-</div>
-
-<h1 class="hero-title">
-
-S
-
-<span>&</span>
-
-F
-
-</h1>
-
-<div class="arabic">
-</div>
-
-<p class="hero-text">
-
-بكل حب وامتنان،
-  ندعوكم لحضور عقد قراني ،
-حيث تبدأ الحكاية وتُكتب أول فصول العمر.
-
-</p>
-
-<a href="#details" class="hero-button">
-↓
-</a>
-
-</div>
-
-</section>
-
-<!-- CONTENT -->
-
-<div class="container">
-
-<!-- DETAILS -->
-
-<section id="details" class="reveal">
-
-<div class="section-line"></div>
-
-<div class="section-mini">
-EVENT DETAILS
-</div>
-
-<h2 class="section-title">
-تفاصيل الأمسية
-</h2>
-
-<p class="section-text">
-
-حضوركم ليس مجرد دعوة،
-بل جزء من الذكرى التي ستبقى معنا للأبد.
-
-</p>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="card-label">
-DATE
-</div>
-
-<div class="card-value">
-سيتم تحديد التاريخ قريباً
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="card-label">
-LOCATION
-</div>
-
-<div class="card-value">
-سيتم الإعلان عن الموقع لاحقاً
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- QUOTE -->
-
-<section class="quote reveal">
-
-<div class="quote-text">
-
-وفي ليلةٍ تشبه الأحلام،
-ننتظر حضوركم لتكتمل الحكاية
-
-</div>
-
-<div class="quote-sub">
-SABER & FATIMAH
-</div>
-
-<button id="shareBtn" class="share-btn">
-مشاركة الدعوة
-</button>
-
-</section>
-
-</div>
-
-<!-- FOOTER -->
-
-<footer class="reveal">
-
-<div class="footer-logo">
-♡
-</div>
-
-<div class="footer-text">
-
-ليلةٌ تبدأ بكم...
-وتبقى في الذاكرة للأبد
-
-</div>
-
-<div class="footer-sub">
-
-SABER & FATIMAH
-
-</div>
-
-</footer>
-
-<script>
-
-// LOADER
-
-window.addEventListener('load', () => {
-
-setTimeout(() => {
-
-document.getElementById('loader').classList.add('hide');
-
-}, 2500);
-
-});
-
-// REVEAL
-
-const reveals = document.querySelectorAll('.reveal');
-
-const observer = new IntersectionObserver(entries => {
-
-entries.forEach(entry => {
-
-if(entry.isIntersecting){
-
-entry.target.classList.add('active');
-
-}
-
-});
-
-}, {
-
-threshold:.15
-
-});
-
-reveals.forEach(el => observer.observe(el));
-
-// SHARE
-
-document.getElementById('shareBtn').addEventListener('click', async () => {
-
-if(navigator.share){
-
-try{
-
-await navigator.share({
-
-title:'دعوة ملكة | صابر & فاطمة',
-
-text:'ندعوكم لمشاركتنا أمسية الملكة الخاصة بنا',
-
-url:window.location.href
-
-});
-
-}catch(err){}
-
-}else{
-
-navigator.clipboard.writeText(window.location.href);
-
-alert('تم نسخ رابط الدعوة');
-
-}
-
-});
-
-</script>
-
+    <!-- VIDEO -->
+    <div class="video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="https://cdn.coverr.co/videos/coverr-luxury-wedding-details-5174?download=1080p" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="overlay"></div>
+    <div class="grain"></div>
+
+    <!-- LOADER -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-small">THE ROYAL ENGAGEMENT</div>
+            <div class="loader-title">S & F</div>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="eyebrow">THE ROYAL ENGAGEMENT</div>
+            <h1 class="hero-title">S <span>&</span> F</h1>
+            <div class="arabic"></div>
+            <p class="hero-text">
+                بكل حب وامتنان،
+                ندعوكم لحضور عقد قراني،
+                حيث تبدأ الحكاية وتُكتب أول فصول العمر.
+            </p>
+            <a href="#details" class="hero-button">↓</a>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="container">
+        <!-- DETAILS -->
+        <section id="details" class="reveal">
+            <div class="section-line"></div>
+            <div class="section-mini">EVENT DETAILS</div>
+            <h2 class="section-title">تفاصيل الأمسية</h2>
+            <p class="section-text">
+                حضوركم ليس مجرد دعوة،
+                بل جزء من الذكرى التي ستبقى معنا للأبد.
+            </p>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-label">DATE</div>
+                    <div class="card-value">سيتم تحديد التاريخ قريباً</div>
+                </div>
+                <div class="card">
+                    <div class="card-label">LOCATION</div>
+                    <div class="card-value">سيتم الإعلان عن الموقع لاحقاً</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUOTE -->
+        <section class="quote reveal">
+            <div class="quote-text">
+                وفي ليلةٍ تشبه الأحلام،
+                ننتظر حضوركم لتكتمل الحكاية
+            </div>
+            <div class="quote-sub">S & F</div>
+            <button id="shareBtn" class="share-btn">مشاركة الدعوة</button>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="reveal">
+        <div class="footer-logo">♡</div>
+        <div class="footer-text">
+            ليلةٌ تبدأ بكم...
+            وتبقى في الذاكرة للأبد
+        </div>
+        <div class="footer-sub">S & F</div>
+    </footer>
+
+    <script>
+        // LOADER
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hide');
+            }, 2500);
+        });
+
+        // REVEAL
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: .15
+        });
+
+        reveals.forEach(el => observer.observe(el));
+
+        // SHARE
+        document.getElementById('shareBtn').addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title:  'دعوة ملكة | S & F',
+                        text: 'ندعوكم لمشاركتنا أمسية الملكة الخاصة بنا',
+                        url: window.location.href
+                    });
+                } catch (err) {}
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('تم نسخ رابط الدعوة');
+            }
+        });
+    </script>
 </body>
-
 </html>
+
